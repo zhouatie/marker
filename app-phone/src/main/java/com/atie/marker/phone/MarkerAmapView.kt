@@ -2,6 +2,8 @@ package com.atie.marker.phone
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -78,6 +80,10 @@ fun MarkerAmapView(
                 MapUnavailableState("缺少高德地图 API Key，无法加载地图。")
             }
 
+            !hasNetworkConnection(context) -> {
+                MapUnavailableState("当前网络不可用，无法加载高德地图。")
+            }
+
             markers.isEmpty() -> {
                 MapUnavailableState("所选日期还没有可展示在地图上的位置标记。")
             }
@@ -116,11 +122,18 @@ private fun AmapCanvas(
 ) {
     val context = LocalContext.current
     val mapView = remember {
-        MapsInitializer.updatePrivacyShow(context, true, true)
-        MapsInitializer.updatePrivacyAgree(context, true)
-        MapView(context).apply {
-            onCreate(null)
-        }
+        runCatching {
+            MapsInitializer.updatePrivacyShow(context, true, true)
+            MapsInitializer.updatePrivacyAgree(context, true)
+            MapView(context).apply {
+                onCreate(null)
+            }
+        }.getOrNull()
+    }
+
+    if (mapView == null) {
+        MapUnavailableState("高德地图初始化失败，暂时无法展示地图。")
+        return
     }
 
     DisposableEffect(mapView) {
@@ -238,6 +251,13 @@ private fun hasAmapApiKey(context: Context): Boolean {
         PackageManager.GET_META_DATA,
     )
     return appInfo.metaData?.getString("com.amap.api.v2.apikey").orEmpty().isNotBlank()
+}
+
+private fun hasNetworkConnection(context: Context): Boolean {
+    val connectivityManager = context.getSystemService(ConnectivityManager::class.java)
+    val network = connectivityManager.activeNetwork ?: return false
+    val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+    return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
 }
 
 private fun markerTimeTitle(epochMillis: Long): String {
