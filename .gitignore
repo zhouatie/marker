@@ -1,0 +1,53 @@
+# macOS
+.DS_Store
+
+# Local environment
+.env
+.env.*
+!.env.example
+local.properties
+**/local.properties
+
+# Gradle
+.gradle/
+**/.gradle/
+build/
+**/build/
+
+# Kotlin
+.kotlin/
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Android generated files
+.cxx/
+**/.cxx/
+.externalNativeBuild/
+**/.externalNativeBuild/
+captures/
+**/captures/
+
+# Android build artifacts
+*.apk
+*.ap_
+*.aab
+*.aar
+*.dex
+
+# Signing and private keys
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local tool indexes
+.codegraph/
