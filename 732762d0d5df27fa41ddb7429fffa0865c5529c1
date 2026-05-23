@@ -1,0 +1,1623 @@
+app-phone/src/main/java/com/atie/marker/phone/MarkerAmapView.kt
+  f6347155ca82db44 5-6,83-86,125-131,134-136,256-260
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.8",
+  "base_commit_sha": "732762d0d5df27fa41ddb7429fffa0865c5529c1",
+  "prompts": {
+    "994bf501b1e1b0bc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e54c1-a55f-7af1-addc-f194215de626",
+        "model": "gpt-5.5"
+      },
+      "human_author": "zhouatie",
+      "messages": [],
+      "total_additions": 27,
+      "total_deletions": 27,
+      "accepted_lines": 343,
+      "overriden_lines": 91,
+      "per_file_stats": {
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerDatabase.java": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/generated/source/kapt/debug/com/atie/marker/phone/data/PhoneMarkerDao_Impl.java": {
+          "accepted_lines": 122
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/IntervalLabelDao.java": {
+          "accepted_lines": 6
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerDao.java": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/MainActivityKt.java": {
+          "accepted_lines": 29
+        },
+        "app-phone/build/generated/source/kapt/debug/com/atie/marker/phone/data/PhoneMarkerDatabase_Impl.java": {
+          "accepted_lines": 32
+        },
+        "openspec/changes/support-date-marker-delete-amap-map/tasks.md": {
+          "additions": 27,
+          "deletions": 27,
+          "accepted_lines": 27
+        },
+        "app-phone/build/generated/source/kapt/debug/com/atie/marker/phone/data/IntervalLabelDao_Impl.java": {
+          "accepted_lines": 50
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerRepository.java": {
+          "accepted_lines": 10
+        },
+        "app-phone/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/ui/TimelineViewModel.java": {
+          "accepted_lines": 17
+        },
+        "app-phone/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt": {
+          "accepted_lines": 9,
+          "overriden_lines": 88
+        },
+        "app-phone/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml": {
+          "accepted_lines": 4
+        },
+        "shared/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/outputs/logs/manifest-merger-debug-report.txt": {
+          "accepted_lines": 4,
+          "overriden_lines": 3
+        }
+      }
+    },
+    "f6347155ca82db44": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e54cd-7137-7ae2-a5cd-163a58895f01",
+        "model": "gpt-5.5"
+      },
+      "human_author": "zhouatie",
+      "messages": [],
+      "total_additions": 25,
+      "total_deletions": 5,
+      "accepted_lines": 68559,
+      "overriden_lines": 98,
+      "per_file_stats": {
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fa.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml": {
+          "accepted_lines": 397
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-nb.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sq.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-nb.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json": {
+          "accepted_lines": 20
+        },
+        "shared/build/.transforms/6b574dbe7e8b5b345a6605a1054930f7/results.bin": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml": {
+          "accepted_lines": 88
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-te.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-it.json": {
+          "accepted_lines": 111
+        },
+        "shared/build/.transforms/a38bf45b5ddd571fbc20f1e57ddcadc4/results.bin": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sw.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pl.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pl.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerDao.java": {
+          "accepted_lines": 26
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-is.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sw.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt": {
+          "accepted_lines": 17,
+          "overriden_lines": 68
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json": {
+          "accepted_lines": 10
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn/values-bn.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zu.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk/values-kk.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/dex_number_of_buckets_file/debug/dexBuilderDebug/out": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th/values-th.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-or.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-tl.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/data/WatchMarkerDao.java": {
+          "accepted_lines": 36
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerDatabase.java": {
+          "accepted_lines": 16
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml": {
+          "accepted_lines": 101
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-th.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pt-rBR.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/MainActivity.java": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-as.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json": {
+          "accepted_lines": 1
+        },
+        "app-phone/local.properties": {
+          "accepted_lines": 8
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-el.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/ui/TimelineViewModel.java": {
+          "accepted_lines": 31
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr/values-fr.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hr.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/sync/MarkerDataMapMapperKt.java": {
+          "accepted_lines": 11
+        },
+        "app-watch/build/generated/source/kapt/debug/com/atie/marker/watch/data/WatchMarkerDao_Impl.java": {
+          "accepted_lines": 456
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/sync/MarkerDataListenerService.java": {
+          "accepted_lines": 24
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-et.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/CaptureViewModel.java": {
+          "accepted_lines": 44
+        },
+        "app-watch/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-da.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml": {
+          "accepted_lines": 107
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-in.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hy.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/outputs/apk/debug/output-metadata.json": {
+          "accepted_lines": 21
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fi.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-si.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json": {
+          "accepted_lines": 9228
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ms.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-nl.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rCA.json": {
+          "accepted_lines": 77
+        },
+        "app-phone/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ar.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-be.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/outputs/apk/debug/output-metadata.json": {
+          "accepted_lines": 21
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-lo.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi/values-vi.xml": {
+          "accepted_lines": 106
+        },
+        ".gradle/buildOutputCleanup/cache.properties": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/incremental/debug/packageDebugResources/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sv.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-lt.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-es-rUS.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rAU.json": {
+          "accepted_lines": 77
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/CaptureViewModelFactory.java": {
+          "accepted_lines": 26
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-mn.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hu.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ro.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml": {
+          "accepted_lines": 106
+        },
+        "local.properties": {
+          "accepted_lines": 8
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt": {
+          "accepted_lines": 340
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka/values-ka.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pt.json": {
+          "accepted_lines": 77
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-am.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-si.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-iw.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fr.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl/values-pl.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pa.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/apk/debug/output-metadata.json": {
+          "accepted_lines": 21
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-tr.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/signing_config_versions/debug/writeDebugSigningConfigVersions/signing-config-versions.json": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pt-rPT.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml": {
+          "accepted_lines": 106
+        },
+        ".idea/deploymentTargetSelector.xml": {
+          "accepted_lines": 29
+        },
+        "app-watch/build/intermediates/incremental/mergeDebugShaders/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-bg.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/generated/source/kapt/debug/com/atie/marker/watch/data/WatchMarkerDatabase_Impl.java": {
+          "accepted_lines": 181
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-cs.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-is.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/MarkerPhoneApp.java": {
+          "accepted_lines": 23
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml": {
+          "accepted_lines": 88
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr/values-fr.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml": {
+          "accepted_lines": 7
+        },
+        "build/reports/problems/problems-report.html": {
+          "accepted_lines": 663
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sl.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml/values-ml.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt": {
+          "accepted_lines": 7
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml": {
+          "accepted_lines": 88
+        },
+        "shared/build/outputs/logs/manifest-merger-debug-report.txt": {
+          "accepted_lines": 16
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-my.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-uk.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ka.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/sync/MarkerDataMapMapperKt.java": {
+          "accepted_lines": 11
+        },
+        "app-watch/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json": {
+          "accepted_lines": 10
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ka.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hi.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka/values-ka.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml": {
+          "accepted_lines": 106
+        },
+        ".idea/migrations.xml": {
+          "accepted_lines": 10
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml": {
+          "accepted_lines": 88
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml": {
+          "accepted_lines": 88
+        },
+        "app-watch/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml": {
+          "accepted_lines": 5
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-vi.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hr.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt": {
+          "accepted_lines": 339
+        },
+        "app-phone/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/IntervalLabelEntity.java": {
+          "accepted_lines": 79
+        },
+        "app-watch/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt": {
+          "accepted_lines": 25
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-iw.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ta.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/ReviewView.java": {
+          "accepted_lines": 15
+        },
+        ".idea/.gitignore": {
+          "accepted_lines": 3
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-or.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-cs.json": {
+          "accepted_lines": 111
+        },
+        ".idea/.name": {
+          "accepted_lines": 1
+        },
+        "shared/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ru.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml": {
+          "accepted_lines": 88
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/dex_number_of_buckets_file/debug/dexBuilderDebug/out": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-b+sr+Latn.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merger.xml": {
+          "accepted_lines": 284
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-mk.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-my.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt": {
+          "accepted_lines": 55
+        },
+        "app-watch/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt": {
+          "accepted_lines": 54
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/sync/MarkerSyncer.java": {
+          "accepted_lines": 10
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-v30.json": {
+          "accepted_lines": 19
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-uz.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sl.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sv.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json": {
+          "accepted_lines": 272
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ar.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-te.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zh-rCN.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-th.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerRepository.java": {
+          "accepted_lines": 38
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ca.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hy.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr/values-tr.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rAU.json": {
+          "accepted_lines": 77
+        },
+        "app-phone/.idea/misc.xml": {
+          "accepted_lines": 10
+        },
+        "app-phone/build/generated/source/kapt/debug/com/atie/marker/phone/data/PhoneMarkerDatabase_Impl.java": {
+          "accepted_lines": 214
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pt.json": {
+          "accepted_lines": 77
+        },
+        "app-phone/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml": {
+          "accepted_lines": 5
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ne.json": {
+          "accepted_lines": 111
+        },
+        "shared/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml": {
+          "accepted_lines": 7
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-lv.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko/values-ko.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/data/WatchMarkerEntityKt.java": {
+          "accepted_lines": 11
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt/values-lt.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zh-rHK.json": {
+          "accepted_lines": 111
+        },
+        ".idea/compiler.xml": {
+          "accepted_lines": 6
+        },
+        "shared/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/MarkerWatchApp.java": {
+          "accepted_lines": 23
+        },
+        "app-phone/.idea/migrations.xml": {
+          "accepted_lines": 10
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko/values-ko.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pa.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/mergeDebugShaders/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-az.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml": {
+          "accepted_lines": 19
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ky.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-gu.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-kn.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-gu.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rXC.json": {
+          "accepted_lines": 77
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fr-rCA.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl/values-pl.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-tr.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl/values-nl.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sr.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-mk.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr/values-tr.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-nl.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v30/values-v30.xml": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt": {
+          "accepted_lines": 25
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rCA.json": {
+          "accepted_lines": 77
+        },
+        "app-watch/build/kotlin/kaptGenerateStubsDebugKotlin/cacheable/caches-jvm/lookups/counters.tab": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-uz.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt": {
+          "accepted_lines": 339
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-bn.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-in.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ca.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ky.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/.gradle/config.properties": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn/values-bn.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/CaptureActivity.java": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/.transforms/0aa0e7b664b35f7c5f22cbcec0f987e4/results.bin": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml": {
+          "accepted_lines": 107
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-eu.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/IntervalLabelDao.java": {
+          "accepted_lines": 16
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-lt.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-bs.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pt-rBR.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties": {
+          "accepted_lines": 1
+        },
+        "app-phone/.idea/caches/deviceStreaming.xml": {
+          "accepted_lines": 1820
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-de.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-da.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ja.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml": {
+          "accepted_lines": 2
+        },
+        ".idea/deviceManager.xml": {
+          "accepted_lines": 13
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml": {
+          "accepted_lines": 88
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerEntity.java": {
+          "accepted_lines": 219
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/data/WatchMarkerDatabase.java": {
+          "accepted_lines": 13
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json": {
+          "accepted_lines": 9228
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi/values-vi.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt": {
+          "accepted_lines": 340
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-kk.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/WatchLocationReader.java": {
+          "accepted_lines": 33
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zh-rHK.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rIN.json": {
+          "accepted_lines": 77
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ru.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sk.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-mr.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/generated/source/kapt/debug/com/atie/marker/phone/data/IntervalLabelDao_Impl.java": {
+          "accepted_lines": 138
+        },
+        "app-phone/.idea/AndroidProjectSystem.xml": {
+          "accepted_lines": 6
+        },
+        "app-phone/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml": {
+          "accepted_lines": 101
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json": {
+          "accepted_lines": 272
+        },
+        "app-phone/src/main/java/com/atie/marker/phone/MarkerAmapView.kt": {
+          "additions": 25,
+          "deletions": 5,
+          "accepted_lines": 25
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml": {
+          "accepted_lines": 88
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-km.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sr.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt": {
+          "accepted_lines": 383
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/.idea/.gitignore": {
+          "accepted_lines": 3
+        },
+        "app-phone/build/outputs/logs/manifest-merger-debug-report.txt": {
+          "accepted_lines": 364,
+          "overriden_lines": 30
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl/values-sl.xml": {
+          "accepted_lines": 106
+        },
+        ".idea/AndroidProjectSystem.xml": {
+          "accepted_lines": 6
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml": {
+          "accepted_lines": 19
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hi.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fr-rCA.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fi.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ms.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/mergeDebugAssets/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ro.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja/values-ja.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/.idea/runConfigurations.xml": {
+          "accepted_lines": 17
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th/values-th.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-be.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/generated/source/kapt/debug/com/atie/marker/phone/data/PhoneMarkerDao_Impl.java": {
+          "accepted_lines": 494
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-es.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-mn.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-lv.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml": {
+          "accepted_lines": 88
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml": {
+          "accepted_lines": 397
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-uk.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml": {
+          "accepted_lines": 106
+        },
+        ".idea/gradle.xml": {
+          "accepted_lines": 20
+        },
+        "shared/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties": {
+          "accepted_lines": 6
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-km.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml": {
+          "accepted_lines": 5
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ur.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zu.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml": {
+          "accepted_lines": 88
+        },
+        "shared/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml": {
+          "accepted_lines": 5
+        },
+        "app-phone/build/kotlin/kaptGenerateStubsDebugKotlin/cacheable/caches-jvm/lookups/counters.tab": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/ui/TimelineViewModelFactory.java": {
+          "accepted_lines": 20
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sk.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json": {
+          "accepted_lines": 20
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-v21.json": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-et.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-am.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/WatchLocationResult.java": {
+          "accepted_lines": 93
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/error/NonExistentClass.java": {
+          "accepted_lines": 4
+        },
+        "app-watch/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-eu.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ml.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/CaptureActivityKt.java": {
+          "accepted_lines": 9
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rGB.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/MainActivityKt.java": {
+          "accepted_lines": 58
+        },
+        "shared/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json": {
+          "accepted_lines": 18
+        },
+        "shared/build/intermediates/incremental/mergeDebugShaders/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml": {
+          "accepted_lines": 107
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fr.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt/values-lt.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-es.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-mr.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-es-rUS.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ta.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rIN.json": {
+          "accepted_lines": 77
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt": {
+          "accepted_lines": 189
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-el.json": {
+          "accepted_lines": 111
+        },
+        ".idea/misc.xml": {
+          "accepted_lines": 10
+        },
+        "app-watch/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-v30.json": {
+          "accepted_lines": 19
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ko.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/outputs/logs/manifest-merger-debug-report.txt": {
+          "accepted_lines": 410
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/data/WatchMarkerRepository.java": {
+          "accepted_lines": 69
+        },
+        ".idea/runConfigurations.xml": {
+          "accepted_lines": 17
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja/values-ja.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/packageDebugResources/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-hu.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk/values-kk.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json": {
+          "accepted_lines": 20
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-b+sr+Latn.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v30/values-v30.xml": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-v21.json": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt": {
+          "accepted_lines": 4
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ml.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-gl.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ur.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-bg.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ko.json": {
+          "accepted_lines": 111
+        },
+        "shared/build/intermediates/incremental/debug/packageDebugResources/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-lo.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/error/NonExistentClass.java": {
+          "accepted_lines": 4
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-bn.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-bs.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-sq.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zh-rCN.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my/values-my.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-de.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rXC.json": {
+          "accepted_lines": 77
+        },
+        "app-watch/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt": {
+          "accepted_lines": 383
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/data/WatchMarkerEntity.java": {
+          "accepted_lines": 219
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-af.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/sync/MarkerAckListenerService.java": {
+          "accepted_lines": 21
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my/values-my.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-as.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-gl.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/.idea/gradle.xml": {
+          "accepted_lines": 12
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ne.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-it.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/tmp/kapt3/stubs/debug/com/atie/marker/phone/data/PhoneMarkerEntitiesKt.java": {
+          "accepted_lines": 11
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zh-rTW.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-ja.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml": {
+          "accepted_lines": 106
+        },
+        "shared/build/.transforms/3e3eaa59ec03f5e34bcc1521be7870f1/results.bin": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-af.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-en-rGB.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-pt-rPT.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml": {
+          "accepted_lines": 106
+        },
+        ".idea/caches/deviceStreaming.xml": {
+          "accepted_lines": 1820
+        },
+        "app-watch/build/intermediates/incremental/mergeDebugAssets/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-kk.json": {
+          "accepted_lines": 111
+        },
+        ".gradle/config.properties": {
+          "accepted_lines": 2
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-kn.json": {
+          "accepted_lines": 111
+        },
+        "shared/build/intermediates/incremental/packageDebugAssets/merger.xml": {
+          "accepted_lines": 2
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/signing_config_versions/debug/writeDebugSigningConfigVersions/signing-config-versions.json": {
+          "accepted_lines": 1
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/WatchHaptics.java": {
+          "accepted_lines": 24
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl/values-nl.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl/values-sl.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-fa.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-vi.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/sync/MarkerDataClientSyncer.java": {
+          "accepted_lines": 20
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml": {
+          "accepted_lines": 101
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-zh-rTW.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml": {
+          "accepted_lines": 106
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-az.json": {
+          "accepted_lines": 111
+        },
+        "app-phone/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-tl.json": {
+          "accepted_lines": 111
+        },
+        "app-watch/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt": {
+          "accepted_lines": 1
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml/values-ml.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml": {
+          "accepted_lines": 106
+        },
+        "app-watch/build/tmp/kapt3/stubs/debug/com/atie/marker/watch/capture/CaptureUiState.java": {
+          "accepted_lines": 157
+        },
+        "app-watch/build/intermediates/incremental/debug/mergeDebugResources/merger.xml": {
+          "accepted_lines": 284
+        },
+        "app-phone/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml": {
+          "accepted_lines": 106
+        }
+      }
+    }
+  }
+}
