@@ -15,6 +15,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "0.1.0"
+        manifestPlaceholders["AMAP_API_KEY"] = providers.gradleProperty("AMAP_API_KEY").orElse("").get()
     }
 
     buildFeatures {
@@ -51,5 +52,8 @@ dependencies {
     kapt("androidx.room:room-compiler:2.6.1")
 
     implementation("com.google.android.gms:play-services-wearable:19.0.0")
+    implementation("com.amap.api:3dmap-location-search:11.1.200_loc11.1.200_sea9.7.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+
+    testImplementation("junit:junit:4.13.2")
 }

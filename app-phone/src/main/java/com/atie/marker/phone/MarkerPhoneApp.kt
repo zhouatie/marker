@@ -11,13 +11,16 @@ class MarkerPhoneApp : Application() {
             applicationContext,
             PhoneMarkerDatabase::class.java,
             "marker-phone.db",
-        ).build()
+        )
+            .addMigrations(PhoneMarkerDatabase.MIGRATION_1_2)
+            .build()
     }
 
     val markerRepository: PhoneMarkerRepository by lazy {
         PhoneMarkerRepository(
             markerDao = database.markerDao(),
             labelDao = database.intervalLabelDao(),
+            deletionDao = database.markerDeletionDao(),
         )
     }
 }

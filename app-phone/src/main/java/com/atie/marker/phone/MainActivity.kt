@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -23,6 +21,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.DatePickerDialog
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -39,10 +40,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.atie.marker.phone.ui.TimelineViewModel
@@ -67,10 +65,15 @@ class MainActivity : ComponentActivity() {
             MaterialTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     val intervals by viewModel.intervals.collectAsState()
+                    val selectedDate by viewModel.selectedDate.collectAsState()
                     TimelineScreen(
-                        date = viewModel.selectedDate,
+                        date = selectedDate,
                         intervals = intervals,
+                        onSelectPreviousDate = viewModel::selectPreviousDate,
+                        onSelectNextDate = viewModel::selectNextDate,
+                        onSelectDate = viewModel::selectDate,
                         onSetIntervalLabel = viewModel::setIntervalLabel,
+                        onDeleteMarker = viewModel::deleteMarker,
                     )
                 }
             }
@@ -78,15 +81,23 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TimelineScreen(
     date: LocalDate,
     intervals: List<ActivityInterval>,
+    onSelectPreviousDate: () -> Unit,
+    onSelectNextDate: () -> Unit,
+    onSelectDate: (LocalDate) -> Unit,
     onSetIntervalLabel: (ActivityInterval, String) -> Unit,
+    onDeleteMarker: (MarkerEvent) -> Unit,
 ) {
     var selectedView by remember { mutableStateOf(ReviewView.Timeline) }
     var highlightedIntervalKey by remember { mutableStateOf<IntervalKey?>(null) }
     var editingInterval by remember { mutableStateOf<ActivityInterval?>(null) }
+    var managingInterval by remember { mutableStateOf<ActivityInterval?>(null) }
+    var pendingDeleteMarker by remember { mutableStateOf<MarkerEvent?>(null) }
+    var showingDatePicker by remember { mutableStateOf(false) }
     val displayIntervals = remember(intervals) {
         intervals.sortedWith(
             compareByDescending<ActivityInterval> { it.startEpochMillis }
@@ -100,14 +111,15 @@ private fun TimelineScreen(
             .padding(horizontal = 20.dp, vertical = 18.dp),
     ) {
         Text(
-            text = "今日时间线",
+            text = if (date == LocalDate.now()) "今日时间线" else "回顾时间线",
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.SemiBold,
         )
-        Text(
-            text = date.toString(),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        DateSelector(
+            date = date,
+            onPrevious = onSelectPreviousDate,
+            onNext = onSelectNextDate,
+            onOpenPicker = { showingDatePicker = true },
         )
         Spacer(modifier = Modifier.height(12.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -152,6 +164,7 @@ private fun TimelineScreen(
                         selected = interval.key == highlightedIntervalKey,
                         onClick = { highlightedIntervalKey = interval.key },
                         onEditLabel = { editingInterval = interval },
+                        onManageMarkers = { managingInterval = interval },
                     )
                     HorizontalDivider()
                 }
@@ -170,11 +183,93 @@ private fun TimelineScreen(
             },
         )
     }
+
+    val activeManagingInterval = managingInterval
+    if (activeManagingInterval != null) {
+        MarkerManagementDialog(
+            interval = activeManagingInterval,
+            onDismiss = { managingInterval = null },
+            onRequestDelete = { marker -> pendingDeleteMarker = marker },
+        )
+    }
+
+    val activeDeleteMarker = pendingDeleteMarker
+    if (activeDeleteMarker != null) {
+        ConfirmDeleteMarkerDialog(
+            marker = activeDeleteMarker,
+            onDismiss = { pendingDeleteMarker = null },
+            onConfirm = {
+                onDeleteMarker(activeDeleteMarker)
+                pendingDeleteMarker = null
+                managingInterval = null
+            },
+        )
+    }
+
+    if (showingDatePicker) {
+        val pickerState = androidx.compose.material3.rememberDatePickerState(
+            initialSelectedDateMillis = date.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli(),
+        )
+        DatePickerDialog(
+            onDismissRequest = { showingDatePicker = false },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        val selectedMillis = pickerState.selectedDateMillis
+                        if (selectedMillis != null) {
+                            onSelectDate(
+                                Instant.ofEpochMilli(selectedMillis)
+                                    .atZone(ZoneId.systemDefault())
+                                    .toLocalDate(),
+                            )
+                        }
+                        showingDatePicker = false
+                    },
+                ) {
+                    Text("确定")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showingDatePicker = false }) {
+                    Text("取消")
+                }
+            },
+        ) {
+            DatePicker(state = pickerState)
+        }
+    }
 }
 
 private enum class ReviewView {
     Timeline,
     Map,
+}
+
+@Composable
+private fun DateSelector(
+    date: LocalDate,
+    onPrevious: () -> Unit,
+    onNext: () -> Unit,
+    onOpenPicker: () -> Unit,
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        OutlinedButton(onClick = onPrevious) {
+            Text("<")
+        }
+        Button(
+            modifier = Modifier.weight(1f),
+            onClick = onOpenPicker,
+        ) {
+            Text(formatDateLabel(date))
+        }
+        OutlinedButton(onClick = onNext) {
+            Text(">")
+        }
+    }
 }
 
 @Composable
@@ -246,6 +341,7 @@ private fun TimelineIntervalRow(
     selected: Boolean,
     onClick: () -> Unit,
     onEditLabel: () -> Unit,
+    onManageMarkers: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -277,7 +373,7 @@ private fun TimelineIntervalRow(
                     fontWeight = FontWeight.SemiBold,
                 )
                 Text(
-                    text = if (interval.endMarker == null) "当前进行中" else "已结束",
+                    text = intervalStatus(interval),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -286,6 +382,9 @@ private fun TimelineIntervalRow(
                 onClick = onEditLabel,
                 label = { Text(interval.label ?: "未标记") },
             )
+            TextButton(onClick = onManageMarkers) {
+                Text("点位")
+            }
         }
         Text(
             text = locationContext(interval),
@@ -293,6 +392,110 @@ private fun TimelineIntervalRow(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }
+}
+
+@Composable
+private fun MarkerManagementDialog(
+    interval: ActivityInterval,
+    onDismiss: () -> Unit,
+    onRequestDelete: (MarkerEvent) -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text("管理标记点")
+        },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                MarkerPointRow(
+                    title = "开始点",
+                    marker = interval.startMarker,
+                    onDelete = { onRequestDelete(interval.startMarker) },
+                )
+                val endMarker = interval.endMarker
+                if (endMarker != null) {
+                    MarkerPointRow(
+                        title = "结束点",
+                        marker = endMarker,
+                        onDelete = { onRequestDelete(endMarker) },
+                    )
+                } else {
+                    Text(
+                        text = "结束点：暂无",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("完成")
+            }
+        },
+    )
+}
+
+@Composable
+private fun MarkerPointRow(
+    title: String,
+    marker: MarkerEvent,
+    onDelete: () -> Unit,
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Medium,
+            )
+            Text(
+                text = markerSummary(marker),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+        TextButton(onClick = onDelete) {
+            Text("删除")
+        }
+    }
+}
+
+@Composable
+private fun ConfirmDeleteMarkerDialog(
+    marker: MarkerEvent,
+    onDismiss: () -> Unit,
+    onConfirm: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text("删除标记点？")
+        },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(markerSummary(marker))
+                Text("删除后会重新计算相邻时间段，引用该点位的时间段标签不会迁移。")
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onConfirm) {
+                Text("删除")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text("取消")
+            }
+        },
+    )
 }
 
 @Composable
@@ -370,140 +573,28 @@ private fun MarkerConnectionMap(
     intervals: List<ActivityInterval>,
     highlightedIntervalKey: IntervalKey?,
 ) {
-    val markers = intervals
-        .flatMap { listOfNotNull(it.startMarker, it.endMarker) }
-        .distinctBy { it.id }
-        .filter { it.location != null }
-        .sortedBy { it.triggeredAtEpochMillis }
-    val highlightedInterval = intervals.firstOrNull { it.key == highlightedIntervalKey }
-    val highlightedHasLocation = highlightedInterval?.let { interval ->
-        interval.startMarker.location != null || interval.endMarker?.location != null
-    } ?: false
-
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(
-                color = MaterialTheme.colorScheme.surfaceVariant,
-                shape = MaterialTheme.shapes.medium,
-            )
-            .padding(14.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-    ) {
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(
-                text = "标记地图",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
-            )
-            Text(
-                text = "${markers.size} 个带位置的标记点",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(320.dp)
-                .background(
-                    color = MaterialTheme.colorScheme.surface,
-                    shape = MaterialTheme.shapes.small,
-                )
-                .padding(12.dp),
-            contentAlignment = Alignment.Center,
-        ) {
-            if (markers.isEmpty()) {
-                Text(
-                    text = "今天还没有可展示在地图上的位置标记。",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            } else {
-                Canvas(modifier = Modifier.fillMaxSize()) {
-                    val latitudes = markers.mapNotNull { it.location?.latitude }
-                    val longitudes = markers.mapNotNull { it.location?.longitude }
-                    val minLat = latitudes.minOrNull() ?: return@Canvas
-                    val maxLat = latitudes.maxOrNull() ?: return@Canvas
-                    val minLng = longitudes.minOrNull() ?: return@Canvas
-                    val maxLng = longitudes.maxOrNull() ?: return@Canvas
-                    val inset = 18.dp.toPx()
-                    val drawWidth = (size.width - inset * 2).coerceAtLeast(1f)
-                    val drawHeight = (size.height - inset * 2).coerceAtLeast(1f)
-                    val points = markers.mapNotNull { marker ->
-                        val location = marker.location ?: return@mapNotNull null
-                        val xRatio = if (maxLng == minLng) 0.5f else {
-                            ((location.longitude - minLng) / (maxLng - minLng)).toFloat()
-                        }
-                        val yRatio = if (maxLat == minLat) 0.5f else {
-                            ((maxLat - location.latitude) / (maxLat - minLat)).toFloat()
-                        }
-                        Offset(x = inset + xRatio * drawWidth, y = inset + yRatio * drawHeight)
-                    }
-                    val pointByMarkerId = markers.zip(points).associate { (marker, point) -> marker.id to point }
-                    intervals.sortedBy { it.startEpochMillis }.forEach { interval ->
-                        val start = pointByMarkerId[interval.startMarker.id]
-                        val end = interval.endMarker?.let { pointByMarkerId[it.id] }
-                        if (start == null || end == null) {
-                            return@forEach
-                        }
-                        val highlighted = interval.key == highlightedIntervalKey
-                        drawLine(
-                            color = if (highlighted) Color(0xFFE03E2F) else Color(0xFF3267D6),
-                            start = start,
-                            end = end,
-                            strokeWidth = if (highlighted) 7.dp.toPx() else 4.dp.toPx(),
-                            cap = StrokeCap.Round,
-                        )
-                    }
-                    points.forEach { point ->
-                        drawCircle(
-                            color = Color.White,
-                            radius = 7.dp.toPx(),
-                            center = point,
-                            style = Stroke(width = 3.dp.toPx()),
-                        )
-                        drawCircle(
-                            color = Color(0xFF3267D6),
-                            radius = 4.dp.toPx(),
-                            center = point,
-                        )
-                    }
-                    if (highlightedHasLocation) {
-                        listOfNotNull(
-                            highlightedInterval?.startMarker?.let { pointByMarkerId[it.id] },
-                            highlightedInterval?.endMarker?.let { pointByMarkerId[it.id] },
-                        ).forEach { point ->
-                            drawCircle(
-                                color = Color(0xFFE03E2F),
-                                radius = 10.dp.toPx(),
-                                center = point,
-                                style = Stroke(width = 3.dp.toPx()),
-                            )
-                        }
-                    }
-                }
-            }
-        }
-        if (highlightedInterval != null && !highlightedHasLocation) {
-            Text(
-                text = "当前选中的时间段没有可用于地图高亮的位置。",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-        Text(
-            text = "这里只连接标记点，不表示真实行走路线或连续 GPS 轨迹。",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-    }
+    MarkerAmapView(
+        intervals = intervals,
+        highlightedIntervalKey = highlightedIntervalKey,
+    )
 }
 
 private fun intervalTimeRange(interval: ActivityInterval): String {
     val start = formatTime(interval.startEpochMillis)
-    val end = if (interval.endMarker == null) "现在" else formatTime(interval.endEpochMillis ?: interval.startEpochMillis)
+    val end = when {
+        interval.endMarker != null -> formatTime(interval.endEpochMillis ?: interval.startEpochMillis)
+        interval.endEpochMillis != null -> "现在"
+        else -> "未闭合"
+    }
     return "$start - $end"
+}
+
+private fun intervalStatus(interval: ActivityInterval): String {
+    return when {
+        interval.endMarker != null -> "已结束"
+        interval.endEpochMillis != null -> "当前进行中"
+        else -> "未闭合"
+    }
 }
 
 private fun locationContext(interval: ActivityInterval): String {
@@ -522,6 +613,24 @@ private fun formatTime(epochMillis: Long): String {
     return DateTimeFormatter.ofPattern("HH:mm")
         .withZone(ZoneId.systemDefault())
         .format(Instant.ofEpochMilli(epochMillis))
+}
+
+private fun formatDateLabel(date: LocalDate): String {
+    return if (date == LocalDate.now()) {
+        "今天 ${date}"
+    } else {
+        date.toString()
+    }
+}
+
+private fun markerSummary(marker: MarkerEvent): String {
+    val time = formatTime(marker.triggeredAtEpochMillis)
+    val location = marker.location
+    return if (location != null) {
+        "$time  ${formatCoordinate(location.latitude, location.longitude)}"
+    } else {
+        "$time  暂无位置"
+    }
 }
 
 private fun formatCoordinate(latitude: Double, longitude: Double): String {

@@ -69,6 +69,12 @@ data class IntervalLabelEntity(
     )
 }
 
+@Entity(tableName = "marker_deletions")
+data class MarkerDeletionEntity(
+    @PrimaryKey val markerId: String,
+    val deletedAtEpochMillis: Long,
+)
+
 fun MarkerEvent.toPhoneEntity(): PhoneMarkerEntity = PhoneMarkerEntity(
     id = id,
     triggeredAtEpochMillis = triggeredAtEpochMillis,

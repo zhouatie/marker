@@ -4,7 +4,7 @@ object TimelineDeriver {
     fun deriveDailyIntervals(
         markers: List<MarkerEvent>,
         labels: List<ActivityIntervalLabel>,
-        nowEpochMillis: Long,
+        openIntervalEndEpochMillis: Long?,
     ): List<ActivityInterval> {
         val orderedMarkers = markers
             .distinctBy { it.id }
@@ -26,7 +26,7 @@ object TimelineDeriver {
                 startMarker = startMarker,
                 endMarker = endMarker,
                 startEpochMillis = startMarker.triggeredAtEpochMillis,
-                endEpochMillis = endMarker?.triggeredAtEpochMillis ?: nowEpochMillis,
+                endEpochMillis = endMarker?.triggeredAtEpochMillis ?: openIntervalEndEpochMillis,
                 label = labelByKey[key]?.label,
             )
         }

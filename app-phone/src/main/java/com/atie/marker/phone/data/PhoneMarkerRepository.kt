@@ -12,6 +12,7 @@ import java.time.ZoneId
 class PhoneMarkerRepository(
     private val markerDao: PhoneMarkerDao,
     private val labelDao: IntervalLabelDao,
+    private val deletionDao: MarkerDeletionDao,
 ) {
     fun observeDailyIntervals(
         date: LocalDate,
@@ -24,15 +25,24 @@ class PhoneMarkerRepository(
             markerDao.observeMarkersForRange(start, end),
             labelDao.observeLabels(),
         ) { markerEntities, labelEntities ->
+            val openIntervalEnd = DailyTimelinePolicy.openIntervalEndEpochMillis(
+                date = date,
+                zoneId = zoneId,
+                nowProvider = nowProvider,
+            )
             TimelineDeriver.deriveDailyIntervals(
                 markers = markerEntities.map { it.toDomain() },
                 labels = labelEntities.map { it.toDomain() },
-                nowEpochMillis = nowProvider(),
+                openIntervalEndEpochMillis = openIntervalEnd,
             )
         }
     }
 
     suspend fun ingestMarker(marker: MarkerEvent) {
+        val deletion = deletionDao.getByMarkerId(marker.id)
+        if (!MarkerDeletionPolicy.shouldAcceptIncomingMarker(deletion)) {
+            return
+        }
         val existing = markerDao.getById(marker.id)?.toDomain()
         if (existing != null && existing.updatedAtEpochMillis > marker.updatedAtEpochMillis) {
             return
@@ -48,5 +58,15 @@ class PhoneMarkerRepository(
                 label = label.trim(),
             ),
         )
+    }
+
+    suspend fun deleteMarker(markerId: String, deletedAtEpochMillis: Long = System.currentTimeMillis()) {
+        deletionDao.upsert(
+            MarkerDeletionEntity(
+                markerId = markerId,
+                deletedAtEpochMillis = deletedAtEpochMillis,
+            ),
+        )
+        labelDao.deleteReferencingMarker(markerId)
     }
 }
